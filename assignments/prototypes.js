@@ -20,11 +20,11 @@ function GameObject(attributes) {
   this.dimensions = attributes.dimensions;
 }
 
-GameObject.prototype.destroy = function() {
-  return `${this.name} was removed from the game.`;
-};
+// GameObject.prototype.destroy = function() {
+//   return `${this.name} was removed from the game.`;
+// };
 
-// GameObject.prototype.destroy = () => "Object was removed from the game.";
+GameObject.prototype.destroy = () => "Object was removed from the game.";
 
 // testing on an example of GameObject
 // const testGameObject = new GameObject({createdAt: 'middle', dimensions: '10x10x10'});
