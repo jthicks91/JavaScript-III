@@ -24,9 +24,9 @@ GameObject.prototype.destroy = function() {
   return `${this.name} was removed from the game.`;
 };
 
-GameObject.prototype.destroy = () => "Object was removed from the game.";
+// GameObject.prototype.destroy = () => "Object was removed from the game.";
 
-// testing on an example instance of GameObject
+// testing on an example of GameObject
 // const testGameObject = new GameObject({createdAt: 'middle', dimensions: '10x10x10'});
 // console.log(testGameObject.destroy()); //'Object was removed from the game.'
 
@@ -43,7 +43,7 @@ function CharacterStats(childAttributes) {
   this.healthPoints = childAttributes.healthPoints;
   this.name = childAttributes.name;
 }
-
+//Recreating Child Prototype to inlcude everything in Parent;
 CharacterStats.prototype = Object.create(GameObject.prototype);
 
 CharacterStats.prototype.destroy = function() {
@@ -70,12 +70,13 @@ CharacterStats.prototype.takeDamage = function() {
 */
 
 function Humanoid(grandChildAttributes) {
-  CharacterStats.call(this, childAttributes);
+  CharacterStats.call(this, grandChildAttributes);
   this.team = grandChildAttributes.team;
   this.weapons = grandChildAttributes.weapons;
   this.language = grandChildAttributes.language;
 }
 
+//Recreating GrandChild Prototype to inlcude everything in Child;
 Humanoid.prototype = Object.create(CharacterStats.prototype);
 
 Humanoid.prototype.greet = function() {
